@@ -35,12 +35,12 @@ const Navbar = () => {
           <a href="/">TicketChain.in</a>
         </div>
 
-        <ul className="navbar-links">
+        {/* <ul className="navbar-links">
           <li><a href="/sports">Sports</a></li>
           <li><a href="/music">Music</a></li>
           <li><a href="/shows">Shows</a></li>
           <li><a href="/cities">Cities</a></li>
-        </ul>
+        </ul> */}
 
         <div className="navbar-right">
           <div className="navbar-options">

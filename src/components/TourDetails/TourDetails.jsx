@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ethers } from 'ethers';
 import './TourDetails.css';
 
 const topSellingTours = [
-  // Tour data as you provided
   { 
     id: 1, 
     name: "DIL-LUMINATI", 
@@ -38,9 +37,9 @@ const topSellingTours = [
     dates: [
       { city: "Las Vegas", date: "2024-09-10" },
       { city: "Denver", date: "2024-10-20" },
-      { city: "Seattle", date: "2024-11-08" }
-    ]
-  }
+      { city: "Seattle", date: "2024-11-08" }
+    ]
+  }
 ];
 
 const TourDetails = () => {
@@ -97,23 +96,22 @@ const TourDetails = () => {
 
       setTransactionHash(txResponse.hash);
       console.log("Transaction successful!", txResponse);
+
+      // Navigate to the ticket confirmation page with the image URL and other details
+      navigate('/ticket-confirmation', {
+        state: {
+          transactionHash: txResponse.hash,
+          account,
+          selectedDate,
+          userDetails,
+          tourName: tour.name,
+          tourImageUrl: tour.imageUrl // Pass the tour image URL
+        }
+      });
+
     } catch (error) {
       console.error("Transaction failed:", error);
     }
-  };
-
-  const printReceipt = () => {
-    const printContent = `
-      <div>
-        <p><strong>Transaction Hash:</strong> ${transactionHash}</p>
-        <p><strong>From:</strong> ${account}</p>
-        <p><strong>To:</strong> 0x6Db1056064db0cF9C03A6e955111E999bbdb5959</p>
-        <p><strong>Amount:</strong> 0.0001 ETH</p>
-      </div>
-    `;
-    const printWindow = window.open('', '_blank');
-    printWindow.document.body.innerHTML = printContent;
-    printWindow.print();
   };
 
   if (!tour) {
@@ -146,8 +144,9 @@ const TourDetails = () => {
 
         <div className="user-details-section">
           <h3>Enter Your Details</h3>
-          <input type="text" name="name" placeholder="Name" value={userDetails.name} onChange={handleInputChange} />
-          <input type="email" name="email" placeholder="Email" value={userDetails.email} onChange={handleInputChange} />
+          <input type="text" name="name" placeholder="Name" value={userDetails.name} onChange={handleInputChange} className="user-input" />
+          <br />
+          <input type="email" name="email" placeholder="Email" value={userDetails.email} onChange={handleInputChange} className="user-input" />
         </div>
 
         {account ? (
@@ -157,14 +156,6 @@ const TourDetails = () => {
           </div>
         ) : (
           <button onClick={connectWallet} className="connect-wallet-btn">Connect MetaMask</button>
-        )}
-
-        {transactionHash && (
-          <div id="transactionDetailsDiv">
-            <h4>Transaction Details</h4>
-            <p><strong>Transaction Hash:</strong> {transactionHash}</p>
-            <button id="printButton" onClick={printReceipt}>Print Receipt</button>
-          </div>
         )}
 
         <div className="ticket-footer">

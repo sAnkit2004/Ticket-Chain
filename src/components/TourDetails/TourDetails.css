@@ -1,109 +1,68 @@
+/* TourDetails.css */
+
 .tour-details-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
+  min-height: calc(100vh - 200px); /* Adjust for Navbar and Footer height */
+  padding: 20px; /* Add padding for better spacing */
+  background-color: #f8f9fa;
+  box-sizing: border-box;
 }
 
 .tour-ticket {
-  background-color: #f9f9f9;
-  width: 600px;
-  border: 2px solid #ddd;
+  background: #fff;
   border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px; /* Limit max width for better responsiveness */
   padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.ticket-header {
   text-align: center;
-  border-bottom: 1px dashed #ccc;
-  padding-bottom: 15px;
 }
 
 .ticket-header h1 {
   font-size: 24px;
-  margin-bottom: 10px;
-}
-
-.ticket-header p {
-  font-size: 16px;
-  color: #777;
+  color: #333;
 }
 
 .ticket-body {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
+  margin: 20px 0;
 }
 
 .tour-details-image {
-  width: 150px;
-  height: 150px;
-  border-radius: 8px;
-  object-fit: cover;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
 }
 
 .ticket-info {
-  flex-grow: 1;
-  margin-left: 20px;
-}
-
-.ticket-info p {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.ticket-info select {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 15px;
-  font-size: 16px;
-}
-
-.user-details-section {
-  margin-top: 20px;
-}
-
-.user-details-section h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
+  margin: 20px 0;
 }
 
 .user-input {
-  width: 100%;
+  width: calc(100% - 20px); /* Adjust for padding */
   padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 5px;
+  margin: 10px 0;
   border: 1px solid #ccc;
-  font-size: 16px;
+  border-radius: 5px;
 }
 
-.ticket-user-info {
-  margin-top: 15px;
-  padding: 10px;
-  border-top: 1px dashed #ccc;
+.wallet-info {
+  margin: 20px 0;
 }
 
-.ticket-user-info p {
-  font-size: 16px;
-  margin: 5px 0;
-}
-
-.ticket-footer {
-  text-align: center;
+.connect-wallet-btn, .buy-ticket-btn {
   margin-top: 20px;
-}
-
-.buy-ticket-btn {
-  padding: 10px 20px;
-  background-color: #28a745;
-  color: white;
+  padding: 10px;
+  width: 100%;
+  background-color: #007bff;
+  color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
+  transition: background-color 0.3s;
 }
 
-.buy-ticket-btn:hover {
-  background-color: #218838;
+.connect-wallet-btn:hover, .buy-ticket-btn:hover {
+  background-color: #0056b3;
 }

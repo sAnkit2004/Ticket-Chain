@@ -22,6 +22,12 @@ const Navbar = () => {
     }
   };
 
+  // Function to disconnect wallet
+  const disconnectWallet = () => {
+    setAccount(null); // Clear the account state
+    console.log("Wallet disconnected");
+  };
+
   return (
     <div className="navbar-container">
       <nav className="navbar">
@@ -44,7 +50,12 @@ const Navbar = () => {
 
             {/* Show account address if connected, otherwise show Connect button */}
             {account ? (
-              <span className="connected-account">Connected: {account.slice(0, 6)}...{account.slice(-4)}</span>
+              <>
+                <span className="connected-account">
+                  Connected: {account.slice(0, 6)}...{account.slice(-4)}
+                </span>
+                <button onClick={disconnectWallet} className="navbar-disconnect">Disconnect</button>
+              </>
             ) : (
               <button onClick={connectWallet} className="navbar-login">Connect</button>
             )}

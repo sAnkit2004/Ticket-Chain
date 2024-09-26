@@ -76,3 +76,29 @@ p {
     max-width: calc(100% - 20px);
   }
 }
+.tour-details {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.tour-details img {
+  width: 400px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.buy-ticket-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.buy-ticket-btn:hover {
+  background-color: #218838;
+}
+

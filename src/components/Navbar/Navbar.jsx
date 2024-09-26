@@ -1,17 +1,15 @@
 import React, { useState } from 'react';
-import './Navbar.css'; // Import your styles here
+import './Navbar.css';
 import { FaSearch } from 'react-icons/fa';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
 const Navbar = () => {
-  const [account, setAccount] = useState(null); // State to store connected wallet address
+  const [account, setAccount] = useState(null);
 
-  // Function to connect to MetaMask wallet
   const connectWallet = async () => {
     if (window.ethereum) {
       try {
-        // Request account access if needed
         const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
-        // Set the connected account
         setAccount(accounts[0]);
         console.log("Connected account:", accounts[0]);
       } catch (error) {
@@ -22,9 +20,8 @@ const Navbar = () => {
     }
   };
 
-  // Function to disconnect wallet
   const disconnectWallet = () => {
-    setAccount(null); // Clear the account state
+    setAccount(null);
     console.log("Wallet disconnected");
   };
 
@@ -32,23 +29,15 @@ const Navbar = () => {
     <div className="navbar-container">
       <nav className="navbar">
         <div className="navbar-logo">
-          <a href="/">TicketChain.in</a>
+          <Link to="/">TicketChain.in</Link>
         </div>
-
-        {/* <ul className="navbar-links">
-          <li><a href="/sports">Sports</a></li>
-          <li><a href="/music">Music</a></li>
-          <li><a href="/shows">Shows</a></li>
-          <li><a href="/cities">Cities</a></li>
-        </ul> */}
 
         <div className="navbar-right">
           <div className="navbar-options">
             <span>USD</span>
-            <a href="/sell">Sell</a>
+            <Link to="/sell">Sell</Link> {/* Use Link to navigate */}
             <a href="/support">Support</a>
 
-            {/* Show account address if connected, otherwise show Connect button */}
             {account ? (
               <>
                 <span className="connected-account">

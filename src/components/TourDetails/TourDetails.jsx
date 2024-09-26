@@ -9,7 +9,7 @@ const topSellingTours = [
     name: "DIL-LUMINATI", 
     imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIXhFGSyptI27e893pF-9MMCeSmM6WSH4zbg&s", 
     description: "Experience the sensational Dil-Luminati concert, a night of lights and sound!",
-    price: "$150",
+    price: "$0.0001",
     dates: [
       { city: "New York", date: "2024-10-12" },
       { city: "Los Angeles", date: "2024-11-05" },
@@ -21,7 +21,7 @@ const topSellingTours = [
     name: "COLD-PLAY", 
     imageUrl: "https://img.etimg.com/thumb/width-1200,height-900,imgsize-2801154,resizemode-75,msid-113587153/news/india/rs-3-4-lakh-for-a-coldplay-concert-ticket-frustrated-fans-say-people-are-buying-to-make-money-not-to-attend.jpg", 
     description: "Join Coldplay for an unforgettable live performance.",
-    price: "$300",
+    price: "$0.0001",
     dates: [
       { city: "San Francisco", date: "2024-09-15" },
       { city: "Miami", date: "2024-10-22" },
@@ -33,7 +33,7 @@ const topSellingTours = [
     name: "ALAN-WALKER", 
     imageUrl: "https://res.klook.com/image/upload/v1714029084/apv83efi3nacfjdymgzo.jpg", 
     description: "Get lost in the electrifying beats of Alan Walker.",
-    price: "$200",
+    price: "$0.0001",
     dates: [
       { city: "Las Vegas", date: "2024-09-10" },
       { city: "Denver", date: "2024-10-20" },

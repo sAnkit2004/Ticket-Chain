@@ -6,6 +6,7 @@ import Cards2 from './components/Cards2/Cards2';
 import Footer from './components/Footers/Footers';
 import TourDetails from './components/TourDetails/TourDetails';
 import TicketConfirmation from './components/TicketConfirmation/TicketConfirmation'; // Import the new component
+import Transactions from './components/Transactions/Transactions';
 import './App.css';
 
 function App() {
@@ -18,7 +19,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Cards2 />} />
           <Route path="/tourdetails/:id" element={<TourDetails />} />
-          <Route path="/ticket-confirmation" element={<TicketConfirmation />} /> {/* New route */}
+          <Route path="/ticket-confirmation" element={<TicketConfirmation />} />
+          <Route path="/sell" element={<Transactions />} />{/* New route */}
         </Routes>
         
     </Router>

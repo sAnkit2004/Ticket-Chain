@@ -34,10 +34,9 @@ const Navbar = () => {
 
         <div className="navbar-right">
           <div className="navbar-options">
-            <span>USD</span>
-            <Link to="/sell">Sell</Link> {/* Use Link to navigate */}
-            <a href="/support">Support</a>
-
+          <Link to="/">Home</Link> {/* Updated to Link to navigate to home page */}
+            <Link to="/sell">Transactions</Link> {/* Use Link to navigate */}
+            
             {account ? (
               <>
                 <span className="connected-account">

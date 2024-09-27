@@ -42,7 +42,7 @@ const topSellingTours = [
   }
 ];
 
-const TourDetails = () => {
+const TourDetails = ({ setTransactions }) => {  // Accept setTransactions as a prop
   const { id } = useParams();
   const tour = topSellingTours.find((tour) => tour.id === parseInt(id));
   const navigate = useNavigate();
@@ -84,7 +84,7 @@ const TourDetails = () => {
       return;
     }
 
-    const walletAddress = "0x6Db1056064db0cF9C03A6e955111E999bbdb5959";  // Receiver's address
+    const walletAddress = "0x7aE5002B5ef09dFFF43cFE1D1f5e15251B260DD8";  // Receiver's address
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
 
@@ -96,6 +96,18 @@ const TourDetails = () => {
 
       setTransactionHash(txResponse.hash);
       console.log("Transaction successful!", txResponse);
+
+      // Record the transaction
+      setTransactions((prev) => [
+        ...prev,
+        {
+          hash: txResponse.hash,
+          tourName: tour.name,
+          selectedDate,
+          userDetails,
+          amount: "0.0001",
+        },
+      ]);
 
       // Navigate to the ticket confirmation page with the image URL and other details
       navigate('/ticket-confirmation', {
